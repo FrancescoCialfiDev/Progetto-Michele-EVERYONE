@@ -94,7 +94,7 @@ export default function MainComponent() {
                             <img
                                 src={element.url}
                                 alt={`Categoria ${element.title} – Everyone`}
-                                className="img-fluid h-100"
+                                className="d-block w-100 prodotti-img"
                             />
                             <div className="w-100 h-100 position-absolute top-0 start-0 bg-black opacity-0"></div>
                             <h3 className="position-absolute top-50 start-50 translate-middle">

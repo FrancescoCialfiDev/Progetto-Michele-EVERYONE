@@ -63,8 +63,14 @@ header img {
 
 /** PRODOTTI */
 #cardProdotti {
-  min-width: 300px;
-  max-width: 100%;
+  min-width: clamp(200px, 70vw, 300px);
+}
+
+#cardProdotti img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
 }
 
 #cardProdotti div:hover {
