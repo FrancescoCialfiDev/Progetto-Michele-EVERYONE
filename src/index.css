@@ -111,7 +111,7 @@ main {
 }
 
 h2 {
-  background-image: url("bgEffect.png");
+  background-image: url("/bgEffect.png");
   color: white;
   font-family: "Bona Nova", serif;
   font-weight: 400;
@@ -147,10 +147,11 @@ h4 {
 
 
 
-.chiSiamo {
-  background-image: url("bgEffect.png");
+main .chiSiamo {
+  background-image: url("/bgEffect.png") !important;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   min-height: 100vh;
 }
 
