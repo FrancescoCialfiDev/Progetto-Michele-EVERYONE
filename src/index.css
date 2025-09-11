@@ -63,14 +63,8 @@ header img {
 
 /** PRODOTTI */
 #cardProdotti {
-  min-width: clamp(200px, 70vw, 300px);
-}
-
-#cardProdotti img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  display: block;
+  min-width: 300px !important;
+  max-width: 100% !important;
 }
 
 #cardProdotti div:hover {
@@ -153,7 +147,7 @@ h4 {
 
 
 
-main .chiSiamo {
+.chiSiamo {
   background-image: url("/bgEffect.png") !important;
   background-repeat: no-repeat;
   background-size: cover;
