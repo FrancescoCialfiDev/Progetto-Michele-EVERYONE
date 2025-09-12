@@ -255,7 +255,11 @@ export default function MainComponent() {
                         ></iframe>
                     </div>
                 </div>
+                <div className="w-100 text-center pt-3">
+                    <small>© {new Date().getFullYear()} EVERYONE — Tutti i diritti riservati.</small>
+                </div>
             </div>
         </main>
+
     );
 }
