@@ -1,18 +1,20 @@
-import { GiPositionMarker } from "react-icons/gi";
+﻿import { GiPositionMarker } from "react-icons/gi";
+
+const heroSrcSet = "/jumboMain-480.jpg 480w, /jumboMain-768.jpg 768w, /jumboMain.jpg 1046w";
 
 export default function MainComponent() {
     const prodotti = [
-        { url: "/logoAbbigliamento.jpg", title: "MODA" },
-        { url: "/logoProfumi.jpg", title: "PROFUMI" },
-        { url: "/logoAccessori.jpg", title: "ACCESSORI" },
-        { url: "/more.jpg", title: "ALTRO" },
+        { url: "/logoAbbigliamento.jpg", title: "MODA", width: 1024, height: 1582 },
+        { url: "/logoProfumi.jpg", title: "PROFUMI", width: 1024, height: 1420 },
+        { url: "/logoAccessori.jpg", title: "ACCESSORI", width: 1024, height: 1374 },
+        { url: "/more.jpg", title: "ALTRO", width: 1024, height: 1378 },
     ];
 
     const cards = [
-        { url: "/card1.jpg", title: "FASHION" },
-        { url: "/card2.jpg", title: "STREET" },
-        { url: "/card3.jpg", title: "CLASSIC" },
-        { url: "/replace.png", title: "AND & MORE" },
+        { url: "/card1.jpg", title: "FASHION", width: 985, height: 1284 },
+        { url: "/card2.jpg", title: "STREET", width: 992, height: 1284 },
+        { url: "/card3.jpg", title: "CLASSIC", width: 984, height: 1344 },
+        { url: "/replace.jpg", title: "AND & MORE", width: 992, height: 1356 },
     ];
 
     const partners = [
@@ -55,7 +57,17 @@ export default function MainComponent() {
         <main>
             {/* HERO / JUMBO */}
             <div id="jumbo" className="position-relative top-0 start-0">
-                <img src="/jumboMain.jpg" alt="Immagine di copertina Everyone" />
+                <img
+                    src="/jumboMain.jpg"
+                    srcSet={heroSrcSet}
+                    sizes="(max-width: 600px) 100vw, (max-width: 1200px) 100vw, 1046px"
+                    alt="Immagine di copertina Everyone"
+                    className="w-100 h-100 object-fit-cover"
+                    width="1046"
+                    height="1382"
+                    decoding="async"
+                    fetchpriority="high"
+                />
 
                 {/* OVERLAY */}
                 <div className="position-absolute top-50 start-50 translate-middle d-flex flex-column align-items-center gap-3">
@@ -64,12 +76,14 @@ export default function MainComponent() {
                         alt="Logo Everyone"
                         className="img-fluid"
                         style={{ minWidth: "380px" }}
+                        width="800"
+                        height="91"
                     />
                     <h3
                         className="fs-6 fw-normal text-white mb-5"
                         style={{ letterSpacing: "2px" }}
                     >
-                        MEN’S CLOTHING
+                        MEN&apos;S CLOTHING
                     </h3>
                     <div className="d-flex gap-3">
                         <button className="btn btn-outline-light px-4 py-2">CONTATTACI</button>
@@ -93,8 +107,12 @@ export default function MainComponent() {
                         >
                             <img
                                 src={element.url}
-                                alt={`Categoria ${element.title} – Everyone`}
+                                alt={`Categoria ${element.title} - Everyone`}
                                 className="d-block w-100 prodotti-img h-100"
+                                loading="lazy"
+                                decoding="async"
+                                width={element.width}
+                                height={element.height}
                             />
                             <div className="w-100 h-100 position-absolute top-0 start-0 bg-black opacity-0"></div>
                             <h3 className="position-absolute top-50 start-50 translate-middle">
@@ -117,7 +135,11 @@ export default function MainComponent() {
                     <div className="position-relative top-0 start-0" key={card.title}>
                         <img
                             src={card.url}
-                            alt={`Collezione ${card.title} – Everyone`}
+                            alt={`Collezione ${card.title} - Everyone`}
+                            loading="lazy"
+                            decoding="async"
+                            width={card.width}
+                            height={card.height}
                         />
                         <div className="overlay w-100 h-100 position-absolute top-0 start-0 bg-black opacity-50 d-none"></div>
                         <h4 className="position-absolute top-50 start-50 translate-middle">
@@ -127,32 +149,22 @@ export default function MainComponent() {
                 ))}
             </div>
 
-            {/* CHI SIAMO */}
-            <div className="chiSiamo p-4" style={{ paddingBottom: 0 }}>
-                <div
-                    id="separatore"
-                    className="h-100 text-center d-flex justify-content-center align-items-center flex-column py-5"
-                >
-                    <h2 id="chiSiamo" className="py-3">
-                        CHI SIAMO
-                    </h2>
-
-                    <p className="text-white mb-2">EVERYONE</p>
-
-                    <p className="text-white mb-2">
-                        Nasce dall’idea che lo stile non è solo quello che indossi, ma come
-                        lo vivi.
-                        <br />
-                        <br />
-                        Il nostro brand unisce l’anima street con la cura del classico e la
-                        comodità del casual, creando un mix unico che ti accompagna ogni
-                        giorno dalla strada all’università, dalla serata con gli amici al
-                        momento speciale.
+            <div className="chiSiamo d-flex flex-column flex-md-row justify-content-between align-items-center px-3">
+                <div className="py-5">
+                    <h2 id="chiSiamo" className="pb-4 text-uppercase">Chi siamo</h2>
+                    <p className="text-white">
+                        EVERYONE &egrave; il punto di riferimento per l&apos;abbigliamento maschile a Trapani. Uno spazio
+                        dedicato agli uomini che amano distinguersi con stile, qualit&agrave; e personalit&agrave;. Streetwear,
+                        classico e casual convivono in una selezione curata di marchi, outfit e accessori pensati per
+                        chi vuole sentirsi sempre al top in ogni occasione.
                     </p>
-                    <br />
-                    <p className="text-white mb-2">
-                        Le nostre collezioni sono pensate per chi vuole distinguersi con
-                        personalità e libertà, senza mai rinunciare a qualità e dettagli
+                    <p className="text-white">
+                        Offriamo un assortimento ricercato di capi che spaziano dai look urban ai completi eleganti,
+                        passando per casual chic e capi iconici senza tempo. Ogni proposta &egrave; studiata per valorizzare
+                        il tuo stile e rendere speciale anche il quotidiano.
+                    </p>
+                    <p className="text-white">
+                        Nel nostro store trovi anche una selezione esclusiva di profumi, accessori e prodotti lifestyle
                         che fanno la differenza.
                     </p>
                     <br />
@@ -166,7 +178,14 @@ export default function MainComponent() {
                     <h2 className="pb-3">I NOSTRI PARTNER</h2>
                     <div className="d-flex partnerIcon justify-content-center flex-wrap w-100">
                         {partners.map((partner, i) => (
-                            <img id="partners" src={partner.url} alt="Logo partner" key={partner.url || i} />
+                            <img
+                                id="partners"
+                                src={partner.url}
+                                alt="Logo partner"
+                                key={partner.url || i}
+                                loading="lazy"
+                                decoding="async"
+                            />
                         ))}
                     </div>
                 </div>
@@ -199,6 +218,10 @@ export default function MainComponent() {
                                         src={c.icon}
                                         alt={`Icona ${c.type}`}
                                         style={{ width: "32px", height: "32px" }}
+                                        loading="lazy"
+                                        decoding="async"
+                                        width="32"
+                                        height="32"
                                     />
                                     <a
                                         href={href}
@@ -251,15 +274,14 @@ export default function MainComponent() {
                             style={{ border: 0 }}
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
-                            title="Mappa Everyone – Via Fardella 248 Trapani"
+                            title="Mappa Everyone - Via Fardella 248 Trapani"
                         ></iframe>
                     </div>
                 </div>
                 <div className="w-100 text-center pt-3">
-                    <small>© {new Date().getFullYear()} EVERYONE — Tutti i diritti riservati.</small>
+                    <small>&copy; {new Date().getFullYear()} EVERYONE - Tutti i diritti riservati.</small>
                 </div>
             </div>
         </main>
-
     );
 }
