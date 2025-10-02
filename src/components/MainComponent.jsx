@@ -2,16 +2,16 @@ import { GiPositionMarker } from "react-icons/gi";
 
 export default function MainComponent() {
     const prodotti = [
-        { url: "/logoAbbigliamento.png", title: "MODA" },
-        { url: "/logoProfumi.png", title: "PROFUMI" },
-        { url: "/logoAccessori.png", title: "ACCESSORI" },
-        { url: "/more.png", title: "ALTRO" },
+        { url: "/logoAbbigliamento.jpg", title: "MODA" },
+        { url: "/logoProfumi.jpg", title: "PROFUMI" },
+        { url: "/logoAccessori.jpg", title: "ACCESSORI" },
+        { url: "/more.jpg", title: "ALTRO" },
     ];
 
     const cards = [
-        { url: "/card1.png", title: "FASHION" },
-        { url: "/card2.png", title: "STREET" },
-        { url: "/card3.png", title: "CLASSIC" },
+        { url: "/card1.jpg", title: "FASHION" },
+        { url: "/card2.jpg", title: "STREET" },
+        { url: "/card3.jpg", title: "CLASSIC" },
         { url: "/replace.png", title: "AND & MORE" },
     ];
 
@@ -55,7 +55,7 @@ export default function MainComponent() {
         <main>
             {/* HERO / JUMBO */}
             <div id="jumbo" className="position-relative top-0 start-0">
-                <img src="/jumboMain.png" alt="Immagine di copertina Everyone" />
+                <img src="/jumboMain.jpg" alt="Immagine di copertina Everyone" />
 
                 {/* OVERLAY */}
                 <div className="position-absolute top-50 start-50 translate-middle d-flex flex-column align-items-center gap-3">
