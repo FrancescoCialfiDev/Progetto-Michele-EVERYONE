@@ -1,4 +1,22 @@
-﻿import { GiPositionMarker } from "react-icons/gi";
+﻿const PinIcon = ({ size = 40, color = "white", style, className }) => (
+    <svg
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        focusable="false"
+        style={style}
+        className={className}
+    >
+        <path
+            d="M12 2C8.686 2 6 4.686 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.314-2.686-6-6-6Zm0 8.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"
+            fill={color}
+        />
+    </svg>
+);
+
 
 const heroSrcSet = "/jumboMain-480.jpg 480w, /jumboMain-768.jpg 768w, /jumboMain.jpg 1046w";
 
@@ -149,8 +167,8 @@ export default function MainComponent() {
                 ))}
             </div>
 
-            <div className="chiSiamo d-flex flex-column flex-md-row justify-content-between align-items-center px-3">
-                <div className="py-5">
+            <div className="chiSiamo p-4" style={{ paddingBottom: 0 }}>
+                <div className="py-5 text-center">
                     <h2 id="chiSiamo" className="pb-4 text-uppercase">Chi siamo</h2>
                     <p className="text-white">
                         EVERYONE &egrave; il punto di riferimento per l&apos;abbigliamento maschile a Trapani. Uno spazio
@@ -174,7 +192,7 @@ export default function MainComponent() {
                 </div>
 
                 {/* PARTNER */}
-                <div id="separatore2" className="h-100 text-center pt-5">
+                <div id="separatore2" className="h-100 text-center pt-5 mt-4">
                     <h2 className="pb-3">I NOSTRI PARTNER</h2>
                     <div className="d-flex partnerIcon justify-content-center flex-wrap w-100">
                         {partners.map((partner, i) => (
@@ -191,7 +209,7 @@ export default function MainComponent() {
                 </div>
 
                 {/* CONTATTI */}
-                <div id="separatore3" className="h-100 text-center pt-5">
+                <div id="separatore3" className="h-100 text-center pt-5 mt-4">
                     <h2 className="pb-3">CONTATTI</h2>
 
                     {contatti.map((c) => {
@@ -250,22 +268,15 @@ export default function MainComponent() {
                 </div>
 
                 {/* MAPPA */}
-                <div className="noiSiamoQui py-5 text-center">
+                <div className="noiSiamoQui py-5 text-center mt-4">
                     <h2>NOI SIAMO QUI</h2>
 
                     <div
                         className="d-flex align-items-center justify-content-start mx-auto mb-3"
                         style={{ maxWidth: "800px" }}
                     >
-                        <GiPositionMarker
-                            style={{
-                                height: "40px",
-                                width: "40px",
-                                color: "white",
-                                marginRight: "8px",
-                            }}
-                        />
-                        <h5 className="text-white m-0">VIA FARDELLA, 248 TRAPANI</h5>
+                        <PinIcon size={40} color="white" style={{ marginRight: "8px" }} />
+                        <p className="text-white m-0 fw-semibold" style={{ letterSpacing: "1px" }}>VIA FARDELLA, 248 TRAPANI</p>
                     </div>
 
                     <div className="ratio ratio-16x9 mx-auto" style={{ maxWidth: "800px" }}>
@@ -285,3 +296,5 @@ export default function MainComponent() {
         </main>
     );
 }
+
+
