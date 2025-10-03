@@ -429,42 +429,35 @@ export default function MainComponent() {
                 </div>
             </section>
             <footer className="site-footer mt-5 pt-5">
-                <div className="container footer-container pb-4">
-                    <div className="row g-4">
-                        <div className="col-12 col-lg-6">
-                            <div className="footer-box h-100 p-4 p-lg-5">
-                                <img src="/logo.png" alt="Logo Everyone" className="img-fluid footer-logo" loading="lazy" decoding="async" />
-                                <p className="mt-3 mb-0">
-                                    EVERYONE &egrave; stile, ricerca e cultura street & classic nel cuore di Trapani. Passa a trovarci e costruisci il tuo prossimo outfit con noi.
-                                </p>
-                            </div>
+                <div className="container pb-4">
+                    <div className="row g-4 justify-content-between">
+                        <div className="col-lg-4">
+                            <img src="/logo.png" alt="Logo Everyone" className="img-fluid footer-logo" loading="lazy" decoding="async" />
+                            <p className="text-white-50 mt-3 mb-0">
+                                EVERYONE &egrave; stile, ricerca e cultura street & classic nel cuore di Trapani. Passa a trovarci e costruisci il tuo prossimo outfit con noi.
+                            </p>
+                        </div>
+                        <div className="col-6 col-lg-2">
+                            <h3 className="h6 text-uppercase text-white">Menu</h3>
+                            <ul className="list-unstyled text-white-50 footer-links">
+                                <li><a href="#home">Home</a></li>
+                                <li><Link to="/abbigliamento">Abbigliamento</Link></li>
+                                <li><a href="#contatti">Contatti</a></li>
+                                <li><a href="#dove-ci-troviamo">Dove siamo</a></li>
+                            </ul>
                         </div>
                         <div className="col-6 col-lg-3">
-                            <div className="footer-box h-100 p-4">
-                                <h3 className="h6 text-uppercase">Menu</h3>
-                                <ul className="list-unstyled footer-links">
-                                    <li><a href="#home">Home</a></li>
-                                    <li><Link to="/abbigliamento">Abbigliamento</Link></li>
-                                    <li><a href="#contatti">Contatti</a></li>
-                                    <li><a href="#dove-ci-troviamo">Dove siamo</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="col-6 col-lg-3">
-                            <div className="footer-box h-100 p-4">
-                                <h3 className="h6 text-uppercase">Contatti rapidi</h3>
-                                <ul className="list-unstyled footer-links">
-                                    <li><a href="tel:+393400879822">+39 340 0879822</a></li>
-                                    <li><a href="https://www.instagram.com/everyone.eu/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                                    <li><a href="https://facebook.com/Everyone.eu" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-                                    <li><a href="https://www.threads.net/@everyone.eu" target="_blank" rel="noopener noreferrer">Threads</a></li>
-                                </ul>
-                            </div>
+                            <h3 className="h6 text-uppercase text-white">Contatti rapidi</h3>
+                            <ul className="list-unstyled text-white-50 footer-links">
+                                <li><a href="tel:+393400879822">+39 340 0879822</a></li>
+                                <li><a href="https://www.instagram.com/everyone.eu/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                                <li><a href="https://facebook.com/Everyone.eu" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div className="footer-bottom text-center py-3">
-                    <small>&copy; {new Date().getFullYear()} EVERYONE - Tutti i diritti riservati.</small>
+                <div className="border-top border-secondary-subtle text-center py-3">
+                    <small className="text-white-50">&copy; {new Date().getFullYear()} EVERYONE - Tutti i diritti riservati.</small>
                 </div>
             </footer>
             </div>

@@ -23,6 +23,22 @@ export default function HeaderComponent() {
         };
     }, [isMenuOpen]);
 
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.key === "Escape") {
+                setIsMenuOpen(false);
+            }
+        };
+
+        if (isMenuOpen) {
+            window.addEventListener("keydown", handleKeyDown);
+        }
+
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [isMenuOpen]);
+
     const toggleMenu = () => {
         setIsMenuOpen((prev) => !prev);
     };
@@ -38,6 +54,7 @@ export default function HeaderComponent() {
                         aria-label={isMenuOpen ? "Chiudi menu" : "Apri menu"}
                         aria-expanded={isMenuOpen}
                         aria-controls="header-overlay"
+                        aria-haspopup="true"
                     >
                         <span className="menu-line" aria-hidden="true"></span>
                         <span className="menu-line" aria-hidden="true"></span>
@@ -60,6 +77,9 @@ export default function HeaderComponent() {
                 id="header-overlay"
                 className={`header-overlay ${isMenuOpen ? "show" : ""}`}
                 aria-hidden={!isMenuOpen}
+                role="dialog"
+                aria-modal={isMenuOpen}
+                aria-label="Menu principale"
             >
                 <ul className="overlay-nav list-unstyled m-0">
                     {navItems.map((item) => (
