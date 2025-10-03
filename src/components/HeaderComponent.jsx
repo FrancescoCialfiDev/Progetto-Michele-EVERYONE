@@ -30,7 +30,7 @@ export default function HeaderComponent() {
     return (
         <>
             <header className="site-header d-flex justify-content-between align-items-center px-3">
-                <div className="d-flex align-items-center gap-3">
+                <div className="d-flex align-items-center gap-1">
                     <button
                         className={`menu-toggle ${isMenuOpen ? "open" : ""}`}
                         type="button"

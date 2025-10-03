@@ -70,10 +70,10 @@ main {
   justify-content: center;
   align-items: center;
   gap: 5px;
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
   background: transparent;
   cursor: pointer;
   transition: background 0.3s ease, border-color 0.3s ease;
@@ -81,8 +81,7 @@ main {
 
 .menu-toggle:hover,
 .menu-toggle:focus {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .menu-line {
