@@ -1,4 +1,4 @@
-/** DEFAULT STYLE */
+﻿/** DEFAULT STYLE */
 * {
   margin: 0px;
   padding: 0px;
@@ -8,6 +8,17 @@
 :root {
   --header-height: 64px;
   --ticker-height: 24px;
+}
+
+html,
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
 }
 
 /** HEADER */
@@ -191,6 +202,7 @@ main,
   display: block;
 }
 
+
 /** PRODOTTI */
 #cardProdotti {
   min-width: 300px !important;
@@ -216,7 +228,7 @@ main,
 }
 
 .containerCard div {
-  width: calc(100% / 2 - 4px)
+  width: calc(100% / 2 - 4px);
 }
 
 .containerCard div img {
@@ -300,7 +312,7 @@ small {
   width: 100px;
   padding: 3px;
   padding-bottom: 10px;
-
+  margin-bottom: 18px;
 }
 
 #separatore {
@@ -309,6 +321,7 @@ small {
 }
 
 #separatore2 h2 {
+  padding-top: 3rem !important;
   background-image: url("");
   color: white;
   font-family: "Bona Nova", serif;
@@ -326,7 +339,7 @@ small {
   font-size: 38px;
 }
 
-#chiSiamo {
+.section-title {
   background-image: url("");
   color: white;
   font-family: "Bona Nova", serif;
@@ -377,8 +390,58 @@ a {
   font-size: 38px;
 }
 
-.noiSiamoQui {
-  border-bottom: 1px solid white;
+.map-section {
+  background: transparent;
+}
+
+.map-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.map-chip {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  padding: 0.35rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.map-text {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+.map-details {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 1rem 1.25rem;
+}
+
+.map-address span,
+.map-address strong {
+  display: block;
+  letter-spacing: 1px;
+}
+
+.map-address span {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.map-frame {
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.map-frame iframe {
+  border-radius: inherit;
 }
 
 .abbigliamento-page {
@@ -419,6 +482,27 @@ a {
   .abbigliamento-grid {
     gap: 20px;
   }
+
+  .prodotti-list {
+    gap: 20px;
+    padding: 2.5rem clamp(2rem, 5vw, 4rem);
+  }
+
+  .collection-list {
+    gap: 20px;
+    padding: 2.5rem clamp(2rem, 5vw, 4rem);
+  }
+
+  .jumbo-actions {
+    flex-direction: row;
+    justify-content: center;
+    max-width: none;
+  }
+
+  .btn-hero {
+    width: auto;
+    min-width: 200px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -426,4 +510,229 @@ a {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 24px;
   }
+
+  .prodotti-list {
+    gap: 24px;
+    padding: 3rem clamp(2.5rem, 6vw, 5rem);
+  }
+
+  .collection-list {
+    gap: 24px;
+    padding: 3rem clamp(2.5rem, 6vw, 5rem);
+  }
+
+  .cardProdotti {
+    flex: 0 0 320px;
+  }
 }
+
+.esperienza-store {
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.95) 0%, rgba(0, 0, 0, 0.9) 100%);
+  padding: 4rem;
+  text-align: center;
+}
+
+.esperienza-box {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.07);
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+  text-align: center;
+}
+
+.esperienza-box:hover,
+.esperienza-box:focus-within {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.esperienza-box h3 {
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.testimonianze .testimonial-card {
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonianze {
+  position: relative;
+  padding-bottom: 3.5rem;
+}
+
+.section-divider {
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+  margin: 2.5rem auto;
+}
+
+
+.esperienza-store h2,
+.testimonianze h2,
+.novita h2,
+.contatti-section h2 {
+  background-image: none;
+}
+
+.testimonianze blockquote {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.testimonianze figcaption span {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.novita-card {
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.novita-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.novita-card .badge {
+  letter-spacing: 1px;
+}
+
+.contatti-section {
+  background: transparent;
+}
+
+.contatti-intro,
+.contatti-card {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.07);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.contatti-intro .orari li + li {
+  margin-top: 1rem;
+}
+
+.contatto-item {
+  color: #fff;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contatti-card li:last-child .contatto-item {
+  border-bottom: none;
+}
+
+.contatto-item:hover,
+.contatto-item:focus {
+  color: rgba(255, 255, 255, 0.7);
+  transform: translateX(4px);
+}
+
+.contatto-item span {
+  letter-spacing: 1.5px;
+}
+
+
+.site-footer {
+  background: #f6f7f8;
+  color: #111;
+}
+
+.footer-container {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.footer-logo {
+  max-width: 200px;
+}
+
+.footer-links li + li {
+  margin-top: 0.5rem;
+}
+
+.footer-links a {
+  color: rgba(17, 17, 17, 0.65);
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+  color: #000;
+}
+
+.footer-box {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  height: 100%;
+}
+
+.footer-box h3 {
+  color: #0f0f0f;
+  letter-spacing: 2px;
+}
+
+.site-footer p,
+.site-footer span,
+.site-footer li {
+  color: rgba(30, 30, 30, 0.7);
+}
+
+.footer-bottom {
+  background: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.footer-bottom small {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+@media (max-width: 575.98px) {
+  .esperienza-store {
+    padding: 3rem 1.5rem;
+  }
+
+  .esperienza-box,
+  .novita-card,
+  .contatti-intro,
+  .contatti-card,
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+
+  .contatti-intro .d-flex {
+    flex-direction: column;
+  }
+
+  .collection-list {
+    padding: 1.5rem 1rem;
+    gap: 12px;
+  }
+
+  .collection-card {
+    flex: 0 0 calc(100% - 1rem);
+    aspect-ratio: 4 / 5;
+  }
+}
+
+
