@@ -72,7 +72,7 @@ export default function MainComponent() {
     };
 
     return (
-        <main>
+        <main id="home">
             {/* HERO / JUMBO */}
             <div id="jumbo" className="position-relative top-0 start-0">
                 <img
@@ -111,7 +111,7 @@ export default function MainComponent() {
             </div>
 
             {/* PRODOTTI */}
-            <section>
+            <section className="bg-white">
                 <div className="text-center case">
                     <h2 className="p-2 m-0">I NOSTRI PRODOTTI</h2>
                 </div>
@@ -148,7 +148,7 @@ export default function MainComponent() {
                 </h2>
             </div>
 
-            <div className="containerCard d-flex flex-lg-nowrap flex-wrap">
+            <div className="containerCard d-flex flex-lg-nowrap flex-wrap bg-white">
                 {cards.map((card) => (
                     <div className="position-relative top-0 start-0" key={card.title}>
                         <img
@@ -208,7 +208,8 @@ export default function MainComponent() {
                     </div>
                 </div>
 
-                {/* CONTATTI */}
+            {/* CONTATTI */}
+            <section id="contatti">
                 <div id="separatore3" className="h-100 text-center pt-5 mt-4">
                     <h2 className="pb-3">CONTATTI</h2>
 
@@ -266,29 +267,30 @@ export default function MainComponent() {
                         }}
                     />
                 </div>
+            </section>
 
-                {/* MAPPA */}
-                <div className="noiSiamoQui py-5 text-center mt-4">
-                    <h2>NOI SIAMO QUI</h2>
+            {/* MAPPA */}
+            <section id="dove-ci-troviamo" className="noiSiamoQui py-5 text-center mt-4">
+                <h2>NOI SIAMO QUI</h2>
 
-                    <div
-                        className="d-flex align-items-center justify-content-start mx-auto mb-3"
-                        style={{ maxWidth: "800px" }}
-                    >
-                        <PinIcon size={40} color="white" style={{ marginRight: "8px" }} />
-                        <p className="text-white m-0 fw-semibold" style={{ letterSpacing: "1px" }}>VIA FARDELLA, 248 TRAPANI</p>
-                    </div>
-
-                    <div className="ratio ratio-16x9 mx-auto" style={{ maxWidth: "800px" }}>
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!3m2!1sit!2sit!4v1757600534916!5m2!1sit!2sit!6m8!1m7!1sCiPoy9cJqX59P_SJwlD2xA!2m2!1d38.01977844657521!2d12.52710129325853!3f133.62622124968428!4f3.687149967144208!5f0.7820865974627469"
-                            style={{ border: 0 }}
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                            title="Mappa Everyone - Via Fardella 248 Trapani"
-                        ></iframe>
-                    </div>
+                <div
+                    className="d-flex align-items-center justify-content-start mx-auto mb-3"
+                    style={{ maxWidth: "800px" }}
+                >
+                    <PinIcon size={40} color="white" style={{ marginRight: "8px" }} />
+                    <p className="text-white m-0 fw-semibold" style={{ letterSpacing: "1px" }}>VIA FARDELLA, 248 TRAPANI</p>
                 </div>
+
+                <div className="ratio ratio-16x9 mx-auto" style={{ maxWidth: "800px" }}>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!3m2!1sit!2sit!4v1757600534916!5m2!1sit!2sit!6m8!1m7!1sCiPoy9cJqX59P_SJwlD2xA!2m2!1d38.01977844657521!2d12.52710129325853!3f133.62622124968428!4f3.687149967144208!5f0.7820865974627469"
+                        style={{ border: 0 }}
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="Mappa Everyone - Via Fardella 248 Trapani"
+                    ></iframe>
+                </div>
+            </section>
                 <div className="w-100 text-center pt-3">
                     <small>&copy; {new Date().getFullYear()} EVERYONE - Tutti i diritti riservati.</small>
                 </div>
