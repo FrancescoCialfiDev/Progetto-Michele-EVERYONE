@@ -311,7 +311,7 @@ export default function MainComponent() {
                 </div>
 
             {/* CONTATTI */}
-            <section id="contatti" className="contatti-section py-5">
+            <section id="contatti" className="contatti-section pt-5">
                 <div className="container">
                     <div className="row g-4 align-items-stretch">
                         <div className="col-lg-5">
@@ -428,7 +428,7 @@ export default function MainComponent() {
                     </div>
                 </div>
             </section>
-            <footer className="site-footer mt-5 pt-5">
+            <footer className="site-footer mt-5 pt-5 border-top border-secondary-subtle">
                 <div className="container pb-4">
                     <div className="row g-4 justify-content-between">
                         <div className="col-lg-4">
@@ -457,10 +457,16 @@ export default function MainComponent() {
                     </div>
                 </div>
                 <div className="border-top border-secondary-subtle text-center py-3">
-                    <small className="text-white-50">&copy; {new Date().getFullYear()} EVERYONE - Tutti i diritti riservati.</small>
+                    <small className="text-white">&copy; {new Date().getFullYear()} EVERYONE - Tutti i diritti riservati.</small>
                 </div>
             </footer>
             </div>
         </main>
     );
 }
+
+
+
+
+
+
