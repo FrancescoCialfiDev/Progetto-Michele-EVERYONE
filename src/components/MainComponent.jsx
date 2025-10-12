@@ -1,4 +1,6 @@
-﻿import { Link } from "react-router-dom";
+﻿import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+
 const PinIcon = ({ size = 40, color = "white", style, className }) => (
     <svg
         width={size}
@@ -20,6 +22,72 @@ const PinIcon = ({ size = 40, color = "white", style, className }) => (
 
 
 const heroSrcSet = "/jumboMain-480.jpg 480w, /jumboMain-768.jpg 768w, /jumboMain.jpg 1046w";
+
+const HeroActionButton = ({ label, buttonClass, items }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+        if (!isOpen) {
+            return;
+        }
+
+        const handleClickOutside = (event) => {
+            if (containerRef.current && !containerRef.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        };
+
+        const handleKeyDown = (event) => {
+            if (event.key === "Escape") {
+                setIsOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        document.addEventListener("touchstart", handleClickOutside);
+        document.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+            document.removeEventListener("touchstart", handleClickOutside);
+            document.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [isOpen]);
+
+    return (
+        <div className="hero-action position-relative" ref={containerRef}>
+            <button
+                type="button"
+                className={`${buttonClass} hero-action-trigger`}
+                aria-haspopup="true"
+                aria-expanded={isOpen}
+                onClick={() => setIsOpen((prev) => !prev)}
+            >
+                {label}
+                <span className="ms-2 hero-action-caret" aria-hidden="true">
+                    ▾
+                </span>
+            </button>
+            {isOpen && (
+                <div className="hero-action-menu dropdown-menu show p-0 border-0 shadow-lg">
+                    {items.map((item) => (
+                        <a
+                            key={item.label}
+                            className="dropdown-item hero-action-item"
+                            href={item.href}
+                            target={item.target}
+                            rel={item.rel}
+                            onClick={() => setIsOpen(false)}
+                        >
+                            {item.label}
+                        </a>
+                    ))}
+                </div>
+            )}
+        </div>
+    );
+};
 
 export default function MainComponent() {
     const prodotti = [
@@ -89,6 +157,37 @@ export default function MainComponent() {
         { type: "threads", icon: "/threads.png", content: "everyone.eu" },
     ];
 
+    const heroContactOptions = [
+        {
+            label: "WhatsApp",
+            href: "https://wa.me/393400879822?text=Ciao%20EVERYONE!%20Vorrei%20avere%20informazioni.",
+            target: "_blank",
+            rel: "noopener noreferrer",
+        },
+        { label: "Chiama ora", href: "tel:+393400879822" },
+    ];
+
+    const heroFollowOptions = [
+        {
+            label: "Instagram",
+            href: "https://www.instagram.com/everyone.eu/",
+            target: "_blank",
+            rel: "noopener noreferrer",
+        },
+        {
+            label: "Facebook",
+            href: "https://facebook.com/Everyone.eu",
+            target: "_blank",
+            rel: "noopener noreferrer",
+        },
+        {
+            label: "Threads",
+            href: "https://www.threads.net/@everyone.eu",
+            target: "_blank",
+            rel: "noopener noreferrer",
+        },
+    ];
+
     const getContactLink = (type) => {
         switch (type) {
             case "phone":
@@ -131,7 +230,7 @@ export default function MainComponent() {
                     <img
                         src="/logo.png"
                         alt="Logo Everyone"
-                        className="img-fluid"
+                        className="img-fluid hero-logo"
                         style={{ minWidth: "380px" }}
                         width="800"
                         height="91"
@@ -142,22 +241,17 @@ export default function MainComponent() {
                     >
                         MEN&apos;S CLOTHING
                     </h3>
-                    <div className="d-flex gap-3">
-                        <a
-                            className="btn btn-light px-4 py-2"
-                            href="#contatti"
-                            role="button"
-                        >
-                            CONTATTACI
-                        </a>
-                        <a
-                            className="btn btn-outline-light px-4 py-2"
-                            href="https://www.instagram.com/everyone.eu/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            SEGUICI
-                        </a>
+                    <div className="d-flex flex-row flex-nowrap gap-2 gap-sm-3 justify-content-center justify-content-sm-start">
+                        <HeroActionButton
+                            label="CONTATTACI"
+                            buttonClass="btn btn-light px-4 py-2"
+                            items={heroContactOptions}
+                        />
+                        <HeroActionButton
+                            label="SEGUICI"
+                            buttonClass="btn btn-outline-light px-4 py-2"
+                            items={heroFollowOptions}
+                        />
                     </div>
                 </div>
             </div>
